@@ -1,5 +1,7 @@
 # 1 kafka介绍
 
+使用docker部署kafka: https://blog.csdn.net/weixin_32555599/article/details/120990052
+
 千峰教育kafka笔记： https://blog.csdn.net/qq_28742063/article/details/126886615
 
 kafka 是一款基于发布与订阅的消息系统，是一个**高性能、高可用和高扩展**的消息队列
