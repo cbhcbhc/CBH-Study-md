@@ -88,3 +88,44 @@ git reset --hard daf5cfec176f7b4ab0f11912e84555ec01297e4e
 
 git push -f origin master 
 
+
+
+# gitlab
+
+自建代码托管平台
+
+docker安装教程：https://blog.csdn.net/lianxiaohei/article/details/122665812
+
+
+
+```sh
+docker run -d  -p 8443:443 -p 8444:80 -p 8445:22 --name gitlab --restart always \
+-v /root/dockerswarm/gitlab/etc:/etc/gitlab \
+-v /root/dockerswarm/gitlab/log:/var/log/gitlab \
+-v /root/dockerswarm/gitlab/data:/var/opt/gitlab --privileged=true twang2218/gitlab-ce-zh
+
+
+# -d：后台运行
+# -p：将容器内部端口向外映射
+# --name：命名容器名称
+# -v：将容器内数据文件夹或者日志、配置等文件夹挂载到宿主机指定目录
+```
+
+
+
+```sh
+docker run 
+-d                #后台运行，全称：detach
+-p 8443:443      #将容器内部端口向外映射
+-p 8090:80       #将容器内80端口映射至宿主机8090端口，这是访问gitlab的端口
+-p 8022:22       #将容器内22端口映射至宿主机8022端口，这是访问ssh的端口
+--restart always #容器自启动
+--name gitlab    #设置容器名称为gitlab
+-v /usr/local/gitlab/etc:/etc/gitlab    #将容器/etc/gitlab目录挂载到宿主机/usr/local/gitlab/etc目录下，若宿主机内此目录不存在将会自动创建
+-v /usr/local/gitlab/log:/var/log/gitlab    #与上面一样
+-v /usr/local/gitlab/data:/var/opt/gitlab   #与上面一样
+--privileged=true         #让容器获取宿主机root权限
+twang2218/gitlab-ce-zh    #镜像的名称，这里也可以写镜像ID
+
+```
+
