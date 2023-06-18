@@ -22,12 +22,16 @@ git push -u origin main
 git status   					查看状态
 git add .  /文件名     	  	  把文件添加到暂存区
 git rm --cached 文件名    	  	  把文件从暂存区里面删除
+git ls-files 查看暂存区的内容
+ls 查看工作区的内容
 git commit -m "日志信息"      	  添加到本地库
 git commit -m "日志信息" 文件名    添加指定文件到本地库
 
 git reflog 						查看历史记录
 git log 					    查看版本详细信息
+git log --oneline				一行查看版本信息
 git reset --hard 版本号 		  版本穿梭
+git reset HEAD~^  回退到上一个版本
 
 git branch 分支名       创建分支
 git branch -v 分支名    查看分支
@@ -57,6 +61,20 @@ git pull 远程仓库别名/地址名 分支名
 git push --set-upstream origin master:master
 git push origin
 ```
+
+
+
+# git reset
+
+[06.git reset回退版本_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1HM411377j?p=6&vd_source=e0bc0019a69a665aa97f3d08221590b0)
+
+![image-20230618142116617](Git.assets/image-20230618142116617.png)
+
+
+
+# git diff
+
+![image-20230618142935633](Git.assets/image-20230618142935633.png)
 
 
 
