@@ -76,7 +76,7 @@ git reset --hard daf5cfec176f7b4ab0f11912e84555ec01297e4e
 git push origin HEAD --foce #远程提交回退
 
 git push origin daf5cfec176f7b4ab0f11912e84555ec01297e4e --foce 
-1
+
 **三、或者本地回退版本,再提交到远程的方式**
 git reset --hard HEAD
 
